@@ -2,6 +2,8 @@ import './App.css';
 import { Component } from 'react';
 import { CardList } from './components/card-list/card-list-component';
 
+import {SearchBox} from './components/search/search.component'
+
 class App extends Component{
   constructor(){
       super()
@@ -22,9 +24,14 @@ class App extends Component{
     })
     .catch(reject=>console.log("faied to load"))
    }
-   myfunction=()=>{
-     console.log('something change')
-   }
+
+   
+   handlerChange=e=>{
+    this.setState({searchField:e.target.value},()=>{
+      console.log("search : "+this.searchField)
+    })
+   
+  }
   value="something change"
    render(){
 
@@ -34,18 +41,12 @@ class App extends Component{
       })
 
      return(<div className="App">
-        <input type="search" 
-        placeholder="enter search"
-        onChange={e=>{
-          this.setState({searchField:e.target.value},()=>{
-            console.log("search : "+this.state.searchField)
-          })
-         
-        }
-        }/>
+          <SearchBox placeholder="search monster" onHandlerChange={this.handlerChange
+          }/>
+
        
          <CardList monsters={filterMonsters}/>
-
+        
         
        
        
