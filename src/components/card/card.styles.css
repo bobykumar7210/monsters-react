@@ -1,8 +1,8 @@
 .card-container {
     display: flex;
     flex-direction: column;
-    background-color: #95dada;
-    border: 1px solid grey;
+    background-color: #8db1e0;
+    border: 0px solid grey;
     border-radius: 5px;
     padding: 25px;
     cursor: pointer;
@@ -16,6 +16,13 @@
     transform: scale(1.05);
   }
   img {
+    background-color: white;
     border-radius:100%;
+  }
+  h2{
+    color: white;
+  }
+  p{
+    color: white;
   }
   
