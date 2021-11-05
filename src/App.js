@@ -25,7 +25,7 @@ class App extends Component{
     .catch(reject=>console.log("faied to load"))
    }
 
-   
+
    handlerChange=e=>{
     this.setState({searchField:e.target.value},()=>{
       console.log("search : "+this.searchField)
@@ -41,17 +41,12 @@ class App extends Component{
       })
 
      return(<div className="App">
+          <h1>Monsters Rolodex</h1>
           <SearchBox placeholder="search monster" onHandlerChange={this.handlerChange
           }/>
-
-       
          <CardList monsters={filterMonsters}/>
         
-        
-       
-       
-      
-      
+             
       </div>)
    }
 
